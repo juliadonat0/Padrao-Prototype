@@ -1,5 +1,5 @@
 class Veiculo {
-    constructor(modelo: string, marca:string, cor: string, numeroRodas: number) {
+    constructor(public modelo: string, public marca:string, public cor: string, public numeroRodas: number) {
         this.modelo = modelo 
         this.marca = marca;
         this.cor = cor;
@@ -18,7 +18,7 @@ class Veiculo {
 
 
 class Carro extends Veiculo {
-    constructor(modelo, marca, cor, numeroRodas, numeroPortas) {
+    constructor(modelo, marca, cor, numeroRodas, public numeroPortas: number) {
         super(modelo, marca, cor, numeroRodas);
         this.numeroPortas = numeroPortas;
     }
@@ -36,7 +36,7 @@ class Carro extends Veiculo {
 
 
 class Moto extends Veiculo {
-    constructor(modelo, marca, cor, numeroRodas, cilindradas) {
+    constructor(modelo, marca, cor, numeroRodas, public cilindradas: number) {
         super(modelo, marca, cor, numeroRodas);
         this.cilindradas = cilindradas;
     }
@@ -54,7 +54,7 @@ class Moto extends Veiculo {
 
 
 class Aplicacao {
-    static criarArrayDeVeiculos() {
+     static criarArrayDeVeiculos() {
         const veiculos = [];
         veiculos.push(new Carro("Sedan", "Toyota", "Prata", 4, 4));
         veiculos.push(new Moto("Esportiva", "Honda", "Vermelha", 2, 600));
