@@ -1,14 +1,13 @@
 class Veiculo {
-    constructor(public modelo: string, public marca:string, public cor: string, public numeroRodas: number) {
-        this.modelo = modelo 
+    constructor(modelo, marca, cor, numeroRodas) {
+        this.modelo = modelo;
         this.marca = marca;
         this.cor = cor;
         this.numeroRodas = numeroRodas;
     }
 
     clone() {
-        
-        return Object.assign({}, this);
+                return Object.assign({}, this);
     }
 
     represent() {
@@ -16,9 +15,8 @@ class Veiculo {
     }
 }
 
-
 class Carro extends Veiculo {
-    constructor(modelo, marca, cor, numeroRodas, public numeroPortas: number) {
+    constructor(modelo, marca, cor, numeroRodas, numeroPortas) {
         super(modelo, marca, cor, numeroRodas);
         this.numeroPortas = numeroPortas;
     }
@@ -34,9 +32,8 @@ class Carro extends Veiculo {
     }
 }
 
-
 class Moto extends Veiculo {
-    constructor(modelo, marca, cor, numeroRodas, public cilindradas: number) {
+    constructor(modelo, marca, cor, numeroRodas, cilindradas) {
         super(modelo, marca, cor, numeroRodas);
         this.cilindradas = cilindradas;
     }
@@ -52,9 +49,8 @@ class Moto extends Veiculo {
     }
 }
 
-
 class Aplicacao {
-     static criarArrayDeVeiculos() {
+    static criarArrayDeVeiculos() {
         const veiculos = [];
         veiculos.push(new Carro("Sedan", "Toyota", "Prata", 4, 4));
         veiculos.push(new Moto("Esportiva", "Honda", "Vermelha", 2, 600));
@@ -70,7 +66,6 @@ class Aplicacao {
         return veiculosClonados;
     }
 }
-
 
 const veiculos = Aplicacao.criarArrayDeVeiculos();
 const veiculosClonados = Aplicacao.clonarVeiculos(veiculos);
